@@ -1,0 +1,25 @@
+.PHONY: clean
+orchestra_exe : violin.o cello.o clarinet.o flute.o trumpet.o main.o
+	gcc -o orchestra.exe violin.o cello.o clarinet.o flute.o trumpet.o main.o
+
+violin.o : violin.c
+	gcc -c -o violin.o violin.c
+
+cello.o : cello.c
+	gcc -c -o cello.o cello.c
+
+clarinet.o : clarinet.c
+	gcc -c -o clarinet.o clarinet.c
+
+flute.o : flute.c
+	gcc -c -o flute.o flute.c
+
+trumpet.o : trumpet.c
+	gcc -c -o trumpet.o trumpet.c
+
+main.o : orchestra.c
+	gcc -c -o main.o orchestra.c
+
+clean :
+	rm *.o orchestra.exe
+
